@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(213, 205, 205);
+    padding: 150px;
+}
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    width: 25%;
+    height: 50px;
+}
+
+
+.container {
+    width: 300px;
+    margin: 0 auto;
+}
+
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+button {
+    background-color: black;
+    color: white;
+}
+
+
+.oper {
+    background-color: grey;
+}
+
+
+.clear {
+    background-color: rgba(0, 100, 0, 0.756);
+    color: #fff;
+}
+
+
+.show-oper {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 215px;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+.con {
+    display: flex;
+}

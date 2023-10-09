@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Customer Survey Form</h1>
+    <div class="container">
+        <form action="">
+            <div class="con1">
+                <div class="name">
+                    <p>Name</p>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="email">
+                    <p>Email</p>
+                    <input type="email" name="email" required>
+                </div>
+                
+            </div>
+            
+            <p>Is this the first time you are using our products & service?</p>
+            <label>
+                <input type="radio" name="first-time" value="yes" required> Yes
+            </label>
+            <label>
+                <input type="radio" name="first-time" value="no"> No
+            </label>
+
+            <p>Would you suggest our service to your friends and colleagues?</p>
+            <label>
+                <input type="radio" name="suggest" value="yes" required> Yes
+            </label>
+            <label>
+                <input type="radio" name="suggest" value="no"> No
+            </label>
+
+            <p>How satisfied are you with our company?</p>
+            <label>
+                <input type="radio" name="satisfaction" value="satisfied" required> Satisfied
+            </label>
+            <label>
+                <input type="radio" name="satisfaction" value="undecided"> Undecided
+            </label>
+            <label>
+                <input type="radio" name="satisfaction" value="unsatisfied"> Unsatisfied
+            </label>
+
+            <p>Do you have suggestions to improve our service?</p>
+            <textarea name="suggestions" rows="4" cols="50" required></textarea>
+
+            <br>
+            <input type="submit">
+            <input type="reset">
+        </form>
+
+        <script>
+            document.querySelector("form").addEventListener("submit", function(event) {
+                const textarea = document.querySelector("textarea[name='suggestions']");
+                if (textarea.value.length < 10) {
+                    alert("Please provide more detailed suggestions (at least 10 characters).");
+                    event.preventDefault(); // Prevent form submission
+                }
+            });
+        </script>
+        
+    </div>
+</body>
+</html>
