@@ -4,7 +4,7 @@ function descendingBubbleSort(arr) {
     for (let i = 0; i < len - 1; i++) {
       for (let j = 0; j < len - 1 - i; j++) {
         if (arr[j] < arr[j + 1]) {
-          // Swaping elements if they are in the wrong order (descending)
+          // Swapping elements if they are in the wrong order (descending)
           const temp = arr[j];
           arr[j] = arr[j + 1];
           arr[j + 1] = temp;

@@ -1,29 +1,29 @@
 function reverseWords(sentence) {
-    // Splitting the sentence into words
-    const words = sentence.split(' ');
-  
-    // Reverseing each word
-    const reversedWords = words.map(word => {
-      // Check if the word contains punctuation
-      const punctuation = word.match(/[.,!?;'"(){}\[\]:]/);
-      if (punctuation) {
-        // If it contains punctuation, separate it from the word
-        const wordWithoutPunctuation = word.replace(/[.,!?;'"(){}\[\]:]/g, '');
-        const reversed = wordWithoutPunctuation.split('').reverse().join('');
-        return reversed + punctuation[0];
-      } else {
-        return word.split('').reverse().join('');
-      }
-    });
-  
-    // Join the reversed words back into a sentence
-    const reversedSentence = reversedWords.join(' ');
-  
-    return reversedSentence;
+  const words = [];
+  let wordStart = 0;
+
+  for (let i = 0; i < sentence.length; i++) {
+    if (/[.,!?;'"(){}\[\]: ]/.test(sentence[i])) {
+      const word = sentence.substring(wordStart, i);
+      words.push(reverseWord(word));
+      words.push(sentence[i]);
+      wordStart = i + 1;
+    }
   }
-  
-  // Example usage:
-  const inputSentence = "This is a sunny day";
-  const reversedSentence = reverseWords(inputSentence);
-  console.log(reversedSentence); 
-  
+
+  const reversedSentence = words.join('');
+  return reversedSentence;
+}
+
+function reverseWord(word) {
+  let reversed = '';
+  for (let i = word.length - 1; i >= 0; i--) {
+    reversed += word[i];
+  }
+  return reversed;
+}
+
+// Example usage:
+const inputSentence = "This is a sunny day!";
+const reversedSentence = reverseWords(inputSentence);
+console.log(reversedSentence);

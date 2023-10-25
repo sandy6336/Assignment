@@ -59,13 +59,21 @@
 
         <script>
             document.querySelector("form").addEventListener("submit", function(event) {
+                // Prevent the form from submitting by default
+                event.preventDefault();
+                
                 const textarea = document.querySelector("textarea[name='suggestions']");
-                if (textarea.value.length < 10) {
+                const textareaValue = textarea.value.trim(); // Remove leading and trailing white spaces
+        
+                if (textareaValue.length < 10) {
                     alert("Please provide more detailed suggestions (at least 10 characters).");
-                    event.preventDefault(); // Prevent form submission
+                } else {
+                    // If suggestions are valid, you can submit the form
+                    this.submit();
                 }
             });
         </script>
+        
         
     </div>
 </body>
